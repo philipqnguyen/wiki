@@ -1,0 +1,13 @@
+<h1 class="small-centered small-4 columns">My Desk</h1>
+
+
+<section class="row">
+  <h3 class="small-centered small-12 columns">Works I'm involed in...</h3>
+
+  <% @works.each do |work| %>
+    <div class="small-12 columns">
+      <%= link_to work.title, work %> |
+      Created by: <%= work.users[0].username %>
+    </div>
+  <% end %>
+</section>

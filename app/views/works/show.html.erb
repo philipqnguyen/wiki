@@ -1,0 +1,21 @@
+<section class="small-8 columns">
+  <h2><%= @work.title %></h2>
+  <p><%= @work.body %></p>
+</section>
+<section>
+  <p><b>Created by:</b> <%= @work.users[0].username %></p>
+  <p><b>Contributors:</b>
+    <% @work.users.each_with_index do |user, index| %>
+      <% next if index == 0 %>
+      <%= user['username'] %>
+      <% if index != @work.users.count - 1 %>
+        |
+      <% end %>
+    <% end %>
+  </p>
+</section>
+<div class="small-12 columns">
+  <%= link_to 'Back', root_path %> |
+  <%= link_to 'Edit', edit_work_path %> |
+  <%= link_to 'Delete', work_path, method: :delete, data: { confirm: "Are you sure?" }%>
+</div>

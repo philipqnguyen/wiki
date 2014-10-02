@@ -1,0 +1,7 @@
+<section class="small-12 columns">
+  <%= link_to "New work", new_work_path, class: 'button' %>
+
+  <% @works.each do |work| %>
+    <%= link_to work.title, work, class: "small-12 columns"%>
+  <% end %>
+</section>
